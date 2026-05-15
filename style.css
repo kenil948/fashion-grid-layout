@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 27% 55% 18%;
+}
+
+#left-top-left {
+    padding: 20px 30px 30px 30px;
+}
+
+#square {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    rotate: 45deg;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#square:hover {
+    transform: rotate(135deg);
+}
+
+#left-top-right {
+    justify-self: end;
+    text-align: right;
+    padding: 20px 30px 30px 30px;
+    width: 100%;
+}
+
+#left-top-right h4 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#left-top-right h5 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.7;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#left-top-right h5:hover {
+    opacity: 0.6;
+    transform: translateX(-3px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#left-top-right h6 {
+    display: none;
+    cursor: pointer;
+}
+
+#left-top-right h6 i {
+    transition: transform 0.3s ease;
+}
+
+#left-top-right h6:hover i {
+    transform: rotate(90deg);
+}
+
+#left-center {
+    grid-column: 1 / 3;
+    padding: 40px;
+}
+
+#left-center h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5.2vw;
+    line-height: 5.2vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+#left-center h1:nth-child(2n) {
+    text-align: center;
+}
+
+#left-bottom {
+    grid-column: 1 / 3;
+    padding: 30px;
+}
+
+#left-bottom p {
+    width: 75%;
+    max-width: 420px;
+    line-height: 1.7;
+    color: #444;
+}
+
+#right {
+    grid-column: 3;
+    grid-row: 1 / 4;
+    padding: 30px;
+    padding-right: 100px;
+    position: relative;
+
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+#right video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: scale 0.5s ease;
+    display: block;
+}
+
+.video-wrapper:hover video {
+    scale: 1.03;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.05));
+    pointer-events: none;
+    border-radius: 3px;
+}
+
+#arrow {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+    padding: 30px;
+    background-color: orangered;
+    box-shadow: 0 8px 25px rgba(255, 98, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#arrow:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+#arrow i {
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+        gap: 20px;
+        margin-bottom: 55px;
+    }
+
+    #left-top-left {
+        padding: 0;
+    }
+
+    #square {
+        width: 15px;
+        height: 15px;
+    }
+
+    #left-top-right {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: auto;
+        padding: 0;
+    }
+
+    #left-top-right h4,
+    #left-top-right h5 {
+        display: none;
+    }
+
+    #left-top-right h6 {
+        display: block;
+        font-size: 8vw;
+    }
+
+    #left-center {
+        padding: 0;
+        margin-top: 20px;
+
+    }
+
+    #left-center h1 {
+        font-size: 14vw;
+        line-height: 14vw;
+    }
+
+    #left-center h1:nth-child(2n) {
+        text-align: right;
+    }
+
+    #left-bottom {
+        padding: 0;
+    }
+
+    #left-bottom p {
+        width: 100%;
+        font-size: 4.5vw;
+        line-height: 6vw;
+        color: #444;
+    }
+
+    #arrow {
+        position: absolute;
+        left: 55%;
+        top: 2%;
+        transform: translate(-50%, -50%) rotate(90deg);
+        box-shadow: 0 5px 20px rgba(255, 98, 0, 0.25);
+        width: 65px;
+        height: 65px;
+        padding: 0;
+        z-index: 99;
+    }
+
+    #arrow i {
+        font-size: 18px;
+    }
+
+    #right {
+        width: 100%;
+        padding: 0;
+        margin-top: -10px;
+        position: relative;
+    }
+
+    #right video {
+        width: 100%;
+        height: 42vh;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .overlay {
+        inset: 0;
+        border-radius: 12px;
+    }
+}
